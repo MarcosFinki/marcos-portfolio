@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import BentoCard from "./BentoCard";
-import { Download, Github, Linkedin } from "lucide-react";
+import { Download, Github, Linkedin, MapPin, Globe } from "lucide-react";
 
 const roles = [
   "FullStack Developer",
@@ -46,46 +46,50 @@ export default function HeroCard() {
     <BentoCard className="md:col-span-1 md:row-span-2 flex flex-col h-full">
 
       {/* TOP AREA */}
-      <div className="grid grid-cols-[96px_1fr] gap-5 items-start">
+      <div className="grid grid-cols-[96px_1fr] gap-4">
 
-        {/* Avatar: ocupa toda la altura del bloque derecho */}
+        {/* Avatar */}
         <div className="row-span-3">
           <img
             src="/me.jpeg"
             alt="Marcos Finkielsztajn"
-            className="w-24 h-full rounded-2xl object-cover"
+            className="w-24 h-full rounded-xl object-cover"
           />
         </div>
 
-        {/* Row 1: Available + Resume */}
+        {/* Row 1 */}
         <div className="flex items-center justify-between">
+
           <span className="flex items-center gap-2 text-xs bg-zinc-800 px-3 py-1 rounded-full">
             <span className="w-2 h-2 bg-green-500 rounded-full"></span>
             Available to work
           </span>
 
-          <div className="relative group">
+          {/* Resume button */}
+          <div className="relative group inline-block">
             <a
               href="/resume.pdf"
               target="_blank"
-              className="flex items-center justify-center w-10 h-10 rounded-lg bg-zinc-900 border border-zinc-800 hover:border-accent transition"
+              className="flex items-center justify-center w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 hover:border-accent transition"
             >
               <Download size={16} />
             </a>
 
-            <span className="absolute right-0 top-full mt-2 text-xs bg-zinc-900 border border-zinc-800 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition pointer-events-none">
+            {/* Tooltip */}
+            <span className="absolute right-0 top-full mt-2 text-xs bg-zinc-900 border border-zinc-800 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition pointer-events-none whitespace-nowrap">
               Resume
             </span>
           </div>
+
         </div>
 
-        {/* Row 2: Name */}
-        <h2 className="text-2xl font-semibold leading-tight">
+        {/* Name */}
+        <h2 className="text-xl font-semibold leading-tight">
           Marcos Finkielsztajn
         </h2>
 
-        {/* Row 3: Role */}
-        <p className="text-zinc-400 text-sm">
+        {/* Role */}
+        <p className="text-zinc-400 text-sm leading-tight">
           I am a{" "}
           <span className="text-accent font-medium">
             {text}
@@ -95,7 +99,28 @@ export default function HeroCard() {
 
       </div>
 
-      {/* BOTTOM ACTIONS */}
+
+      {/* INFO SECTION */}
+      <div className="flex flex-wrap gap-2 text-xs mt-5">
+
+        <span className="flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-800">
+          <MapPin size={14} />
+          Valencia, Spain
+        </span>
+
+        <span className="flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-800">
+          <Globe size={14} />
+          Spanish & English
+        </span>
+
+      </div>
+
+
+      {/* DIVIDER */}
+      <div className="border-t border-zinc-800 my-5"></div>
+
+
+      {/* ACTIONS */}
       <div className="grid grid-cols-2 gap-3 mt-auto text-sm">
 
         <a
