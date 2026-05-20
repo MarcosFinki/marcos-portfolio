@@ -1,17 +1,24 @@
 "use client";
 
-import { ReactNode, useRef } from "react";
+import { HTMLAttributes, ReactNode, useRef } from "react";
 import { clsx } from "clsx";
 
-type BentoCardProps = {
+type BentoCardProps = HTMLAttributes<HTMLDivElement> & {
   children: ReactNode;
   className?: string;
 };
 
-export default function BentoCard({ children, className }: BentoCardProps) {
+export default function BentoCard({
+  children,
+  className,
+  onMouseMove,
+  ...props
+}: BentoCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
 
   function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+    onMouseMove?.(e);
+
     const rect = cardRef.current?.getBoundingClientRect();
     if (!rect) return;
 
@@ -26,10 +33,12 @@ export default function BentoCard({ children, className }: BentoCardProps) {
     <div
       ref={cardRef}
       onMouseMove={handleMouseMove}
+      {...props}
       className={clsx(
-        "group relative rounded-2xl border border-zinc-800 bg-zinc-900 p-6",
-        "transition-all duration-300 overflow-hidden",
-        "hover:border-accent",
+        "group relative overflow-hidden rounded-2xl border border-white/[0.08]",
+        "bg-[linear-gradient(180deg,rgba(24,24,27,0.94),rgba(13,13,16,0.98))] p-6",
+        "shadow-[0_18px_60px_rgba(0,0,0,0.22)] ring-1 ring-white/[0.02]",
+        "transition-all duration-300 hover:border-accent/60",
         className
       )}
     >
@@ -44,7 +53,7 @@ export default function BentoCard({ children, className }: BentoCardProps) {
         }}
       />
 
-      <div className="relative z-10">{children}</div>
+      <div className="relative z-10 flex h-full flex-col">{children}</div>
     </div>
   );
 }

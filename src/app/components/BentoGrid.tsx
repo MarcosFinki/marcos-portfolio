@@ -1,12 +1,3 @@
-import BentoCard from "./BentoCard";
-import {
-  Database,
-  Shield,
-  Server,
-  Code2,
-  Layers,
-  Rocket
-} from "lucide-react";
 import HeroCard from "./HeroCard";
 import ProjectsCard from "./ProjectsCard";
 import StackCard from "./StackCard";
@@ -14,38 +5,20 @@ import BackendCard from "./BackendCard";
 import OpenSourceCard from "./OpenSourceCard";
 import ContactCard from "./ContactCard";
 import SettingsCard from "./SettingsCard";
+import WorkFocusCard from "./WorkFocusCard";
 
 export default function BentoGrid() {
   return (
     <section className="w-full">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[160px]">
-
-        {/* HERO CARD */}
-
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:auto-rows-[170px] lg:grid-cols-4 lg:auto-rows-[165px]">
         <HeroCard />
-
-        {/* PROJECTS CARD */}
         <ProjectsCard />
-
-
-        {/* STACK */}
-        <StackCard />
-
-
-        {/* BACKEND */}
         <BackendCard />
-
-
-        {/* OPEN SOURCE */}
+        <StackCard />
         <OpenSourceCard />
-
-
-        {/* CONTACT */}
+        <WorkFocusCard />
         <ContactCard />
-
-        {/* SETTINGS */}
         <SettingsCard />
-
       </div>
     </section>
   );

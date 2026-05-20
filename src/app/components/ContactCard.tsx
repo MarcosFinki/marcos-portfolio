@@ -1,51 +1,55 @@
+"use client";
+
+import { useState } from "react";
 import BentoCard from "./BentoCard";
-import { Mail } from "lucide-react";
+import { Check, Copy, Mail } from "lucide-react";
+
+const email = "marcosfinkiel24@gmail.com";
 
 export default function ContactCard() {
+  const [copied, setCopied] = useState(false);
+
+  async function copyEmail() {
+    await navigator.clipboard.writeText(email);
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 1600);
+  }
+
   return (
     <BentoCard>
+      <div className="flex items-start gap-3">
+        <span className="flex size-9 items-center justify-center rounded-lg border border-accent/20 bg-accent/10 text-accent">
+          <Mail size={18} />
+        </span>
 
-      <div>
-        <Mail className="w-6 h-6 text-accent mb-2" />
+        <div className="min-w-0">
+          <h3 className="text-lg font-semibold tracking-tight text-zinc-50">
+            Direct Contact
+          </h3>
 
-        <h3 className="text-lg font-semibold">
-          Contact
-        </h3>
-
-        <p className="text-sm text-zinc-400 mt-2">
-          Open to freelance and full-time opportunities.
-        </p>
+          <p className="mt-1 text-sm leading-relaxed text-zinc-400">
+            Open to freelance and full-time opportunities.
+          </p>
+        </div>
       </div>
 
-      <div className="mt-4 flex flex-wrap gap-3 text-sm">
-
+      <div className="mt-auto flex flex-col gap-3 pt-4 sm:flex-row sm:items-end sm:justify-between">
         <a
-            href="mailto:tuemail@example.com"
-            className="px-2 py-1 rounded-md bg-zinc-800 text-zinc-300 hover:text-accent transition text-xs"
+          href={`mailto:${email}`}
+          className="min-w-0 truncate rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-medium text-zinc-100 transition hover:border-accent/60 hover:text-white"
         >
-            Email
+          {email}
         </a>
 
-        <a
-            href="https://github.com/tuusuario"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-2 py-1 rounded-md bg-zinc-800 text-zinc-300 hover:text-accent transition text-xs"
+        <button
+          type="button"
+          onClick={copyEmail}
+          className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-zinc-300 transition hover:border-accent/60 hover:text-white"
         >
-            GitHub
-        </a>
-
-        <a
-            href="https://linkedin.com/in/tuusuario"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-2 py-1 rounded-md bg-zinc-800 text-zinc-300 hover:text-accent transition text-xs"
-        >
-            LinkedIn
-        </a>
-
-        </div>
-
+          {copied ? <Check size={15} /> : <Copy size={15} />}
+          {copied ? "Copied" : "Copy"}
+        </button>
+      </div>
     </BentoCard>
   );
 }

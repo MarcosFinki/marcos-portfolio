@@ -1,133 +1,69 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import Image from "next/image";
 import BentoCard from "./BentoCard";
 import { Download, Github, Linkedin, MapPin, Globe } from "lucide-react";
 
-const roles = [
-  "FullStack Developer",
-  "Backend Developer",
-  "NestJS Developer",
-  "Software Engineer"
-];
-
 export default function HeroCard() {
-  const [text, setText] = useState("");
-  const [roleIndex, setRoleIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    const current = roles[roleIndex];
-    let timeout: NodeJS.Timeout;
-
-    if (!isDeleting) {
-      timeout = setTimeout(() => {
-        setText(current.slice(0, text.length + 1));
-      }, 60);
-
-      if (text === current) {
-        timeout = setTimeout(() => setIsDeleting(true), 1200);
-      }
-    } else {
-      timeout = setTimeout(() => {
-        setText(current.slice(0, text.length - 1));
-      }, 40);
-
-      if (text === "") {
-        setIsDeleting(false);
-        setRoleIndex((prev) => (prev + 1) % roles.length);
-      }
-    }
-
-    return () => clearTimeout(timeout);
-  }, [text, isDeleting, roleIndex]);
-
   return (
-    <BentoCard className="md:col-span-1 md:row-span-2 flex flex-col h-full">
+    <BentoCard className="md:col-span-1 md:row-span-2">
+      <div className="grid grid-cols-[96px_1fr] gap-x-4 gap-y-3">
+        <Image
+          src="/me.jpeg"
+          alt="Marcos Finkielsztajn"
+          width={96}
+          height={96}
+          priority
+          className="row-span-2 size-24 shrink-0 rounded-xl object-cover ring-1 ring-white/10"
+        />
 
-      {/* TOP AREA */}
-      <div className="grid grid-cols-[96px_1fr] gap-4">
-
-        {/* Avatar */}
-        <div className="row-span-3">
-          <img
-            src="/me.jpeg"
-            alt="Marcos Finkielsztajn"
-            className="w-24 h-full rounded-xl object-cover"
-          />
-        </div>
-
-        {/* Row 1 */}
-        <div className="flex items-center justify-between">
-
-          <span className="flex items-center gap-2 text-xs bg-zinc-800 px-3 py-1 rounded-full">
-            <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-            Available to work
+        <div className="flex items-start justify-between gap-2">
+          <span className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-emerald-400/15 bg-emerald-400/10 px-2.5 py-1 text-[11px] font-medium text-emerald-200">
+            <span className="size-1.5 rounded-full bg-emerald-400"></span>
+            Available
           </span>
 
-          {/* Resume button */}
-          <div className="relative group inline-block">
+          <div className="relative inline-block">
             <a
               href="/resume.pdf"
               target="_blank"
-              className="flex items-center justify-center w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 hover:border-accent transition"
+              aria-label="Open resume"
+              className="flex size-9 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] text-zinc-200 transition hover:border-accent/60 hover:text-white"
             >
               <Download size={16} />
             </a>
-
-            {/* Tooltip */}
-            <span className="absolute right-0 top-full mt-2 text-xs bg-zinc-900 border border-zinc-800 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition pointer-events-none whitespace-nowrap">
-              Resume
-            </span>
           </div>
-
         </div>
 
-        {/* Name */}
-        <h2 className="text-xl font-semibold leading-tight">
+        <h2 className="text-xl font-semibold leading-tight tracking-tight text-zinc-50">
           Marcos Finkielsztajn
         </h2>
 
-        {/* Role */}
-        <p className="text-zinc-400 text-sm leading-tight">
-          I am a{" "}
-          <span className="text-accent font-medium">
-            {text}
-          </span>
-          <span className="animate-pulse">|</span>
+        <p className="col-span-2 text-sm leading-relaxed text-zinc-400">
+          I build real full-stack applications with scalable backend architecture.
         </p>
-
       </div>
 
-
-      {/* INFO SECTION */}
-      <div className="flex flex-wrap gap-2 text-xs mt-5">
-
-        <span className="flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-800">
+      <div className="mt-5 flex flex-wrap gap-2 text-xs">
+        <span className="flex items-center gap-2 whitespace-nowrap rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-zinc-300">
           <MapPin size={14} />
-          Valencia, Spain
+          Valencia
         </span>
 
-        <span className="flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-800">
+        <span className="flex items-center gap-2 whitespace-nowrap rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-zinc-300">
           <Globe size={14} />
-          Spanish & English
+          ES / EN
         </span>
-
       </div>
 
+      <div className="my-5 border-t border-white/[0.08]"></div>
 
-      {/* DIVIDER */}
-      <div className="border-t border-zinc-800 my-5"></div>
-
-
-      {/* ACTIONS */}
-      <div className="grid grid-cols-2 gap-3 mt-auto text-sm">
-
+      <div className="mt-auto grid grid-cols-2 gap-3 text-sm">
         <a
-          href="https://github.com/tuusuario"
+          href="https://github.com/MarcosFinki"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 bg-zinc-900 border border-zinc-800 rounded-xl py-3 hover:border-accent transition"
+          className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] py-3 text-zinc-200 transition hover:border-accent/60 hover:text-white"
         >
           <Github size={16} />
           GitHub
@@ -137,14 +73,12 @@ export default function HeroCard() {
           href="https://linkedin.com/in/tuusuario"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 bg-zinc-900 border border-zinc-800 rounded-xl py-3 hover:border-accent transition"
+          className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] py-3 text-zinc-200 transition hover:border-accent/60 hover:text-white"
         >
           <Linkedin size={16} />
           LinkedIn
         </a>
-
       </div>
-
     </BentoCard>
   );
 }
