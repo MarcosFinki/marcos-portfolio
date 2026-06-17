@@ -1,6 +1,141 @@
 {
+  "common": {
+    "close": "Close",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
   "hero": {
-    "title": "FullStack Developer",
-    "subtitle": "Building modern, production-ready web applications."
+    "available": "Available",
+    "resume": "Open resume",
+    "name": "Marcos Finkielsztajn",
+    "description": "I build full-stack web systems for real operational workflows.",
+    "location": "Valencia",
+    "languages": "ES / EN"
+  },
+  "projects": {
+    "controls": {
+      "viewDetails": "View details",
+      "previous": "Show previous project screen",
+      "next": "Show next project screen",
+      "showProject": "Show {project}",
+      "screenshots": "Screenshots"
+    },
+    "amxpress": {
+      "name": "AMXpress Platform",
+      "eyebrow": "Primary case study",
+      "tech": "Next.js · NestJS · PostgreSQL · JWT · Mercado Libre",
+      "proof": "Production logistics platform with admin, customer, mobile and backend workflows.",
+      "cta": "Live platform",
+      "chips": ["Auth", "Roles", "Customer Portal", "Labels", "Mobile Flow", "ML Integration"],
+      "images": [
+        {
+          "label": "Customer portal",
+          "alt": "AMXpress customer-facing logistics platform"
+        },
+        {
+          "label": "Operations dashboard",
+          "alt": "AMXpress operations dashboard with shipment management"
+        },
+        {
+          "label": "Mobile delivery flow",
+          "alt": "AMXpress mobile delivery workflow concept"
+        }
+      ],
+      "detail": {
+        "eyebrow": "AMXpress case study",
+        "title": "Production logistics platform",
+        "overview": "AMXpress is a production logistics platform used for real operational workflows.",
+        "sections": [
+          {
+            "title": "What I built",
+            "items": [
+              "Backend APIs with NestJS",
+              "PostgreSQL database structure",
+              "JWT authentication",
+              "Role-based access",
+              "Customer portal",
+              "Operations/admin flows",
+              "Label generation",
+              "Mercado Libre integration",
+              "Mobile delivery workflow / driver app flow"
+            ]
+          },
+          {
+            "title": "Technical architecture",
+            "items": [
+              "Frontend: Next.js / Angular where applicable",
+              "Backend: NestJS",
+              "Database: PostgreSQL",
+              "Auth: JWT + roles",
+              "Integrations: Mercado Libre API",
+              "Deployment: own server / production environment"
+            ]
+          },
+          {
+            "title": "Core features",
+            "items": [
+              "Shipment management",
+              "Customer access",
+              "Label handling",
+              "Delivery status tracking",
+              "Driver/mobile workflow",
+              "Admin operations"
+            ]
+          }
+        ]
+      }
+    },
+    "trackly": {
+      "name": "Trackly",
+      "eyebrow": "Secondary proof",
+      "tech": "Open Source · Desktop App · GitHub Release",
+      "proof": "Installable open-source tool released independently on GitHub.",
+      "cta": "GitHub release",
+      "chips": ["Open source", "Desktop App", "Release"],
+      "images": [
+        {
+          "label": "Desktop release",
+          "alt": "Trackly open-source desktop app"
+        }
+      ]
+    }
+  },
+  "stack": {
+    "title": "Tech Stack",
+    "description": "Frontend, backend, databases.",
+    "items": ["Angular", "Next.js", "React", "Node.js", "NestJS", "TypeScript", "PostgreSQL", "PHP"]
+  },
+  "backend": {
+    "title": "AMXpress Backend",
+    "description": "Auth, roles, data models, labels, and integration workflows.",
+    "items": ["NestJS APIs", "JWT auth", "Roles & permissions", "PostgreSQL", "Mercado Libre flow"]
+  },
+  "openSource": {
+    "title": "Trackly",
+    "description": "Open-source desktop tool.",
+    "version": "v1.0.0",
+    "chip": "Open source",
+    "cta": "Release"
+  },
+  "workFocus": {
+    "title": "Product Focus",
+    "description": "Building practical software around users, data, and operations.",
+    "items": ["Production systems", "Logistics workflows", "Customer portals", "Ops dashboards", "Backend APIs", "Mobile flows", "Role-based UX", "Data visibility", "Automation"]
+  },
+  "contact": {
+    "title": "Direct Contact",
+    "description": "Open to freelance and full-time opportunities.",
+    "copy": "Copy",
+    "copied": "Copied"
+  },
+  "settings": {
+    "title": "Settings",
+    "description": "Theme and language.",
+    "dark": "Dark",
+    "light": "Light",
+    "english": "EN",
+    "spanish": "ES",
+    "switchToEnglish": "Switch language to English",
+    "switchToSpanish": "Switch language to Spanish"
   }
 }

@@ -10,7 +10,7 @@ import WorkFocusCard from "./WorkFocusCard";
 export default function BentoGrid() {
   return (
     <section className="w-full">
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:auto-rows-[170px] lg:grid-cols-4 lg:auto-rows-[165px]">
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-3 md:auto-rows-[170px] md:gap-4 lg:grid-cols-4 lg:auto-rows-[165px]">
         <HeroCard />
         <ProjectsCard />
         <BackendCard />

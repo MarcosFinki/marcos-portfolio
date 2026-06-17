@@ -1,30 +1,23 @@
 import BentoCard from "./BentoCard";
 import { Server } from "lucide-react";
-
-const backendFocus = [
-  "REST APIs",
-  "JWT auth",
-  "Role-based access",
-  "SQL & MongoDB",
-  "Modular services"
-];
+import { useTranslations } from "next-intl";
+import { ui } from "./uiStyles";
 
 export default function BackendCard() {
+  const t = useTranslations("backend");
+  const backendFocus = t.raw("items") as string[];
+
   return (
     <BentoCard className="md:row-span-2">
-      <div className="flex items-start gap-3">
-        <span className="flex size-9 items-center justify-center rounded-lg border border-accent/20 bg-accent/10 text-accent">
+      <div className={ui.cardHeader}>
+        <span className={ui.iconBox}>
           <Server size={18} />
         </span>
 
         <div>
-          <h3 className="text-lg font-semibold tracking-tight text-zinc-50">
-            Backend Architecture
-          </h3>
+          <h3 className={ui.cardTitle}>{t("title")}</h3>
 
-          <p className="mt-1 text-sm leading-relaxed text-zinc-400">
-            APIs and backend flows built with maintainability in mind.
-          </p>
+          <p className={ui.cardDescription}>{t("description")}</p>
         </div>
       </div>
 
@@ -32,7 +25,7 @@ export default function BackendCard() {
         {backendFocus.map((item) => (
           <li
             key={item}
-            className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-2 text-xs text-zinc-300"
+            className="flex items-center gap-2 rounded-lg border border-zinc-200 bg-white/70 px-2.5 py-2 text-xs text-zinc-700 shadow-sm shadow-zinc-950/[0.02] dark:border-white/10 dark:bg-white/[0.04] dark:text-zinc-300 dark:shadow-none"
           >
             <span className="size-1.5 rounded-full bg-accent"></span>
             {item}

@@ -1,6 +1,141 @@
 {
+  "common": {
+    "close": "Cerrar",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
   "hero": {
-    "title": "Desarrollador FullStack",
-    "subtitle": "Construyendo aplicaciones web modernas listas para producción."
+    "available": "Disponible",
+    "resume": "Abrir CV",
+    "name": "Marcos Finkielsztajn",
+    "description": "Construyo sistemas web full-stack para flujos operativos reales.",
+    "location": "Valencia",
+    "languages": "ES / EN"
+  },
+  "projects": {
+    "controls": {
+      "viewDetails": "Ver detalles",
+      "previous": "Ver pantalla anterior del proyecto",
+      "next": "Ver siguiente pantalla del proyecto",
+      "showProject": "Ver {project}",
+      "screenshots": "Capturas"
+    },
+    "amxpress": {
+      "name": "AMXpress Platform",
+      "eyebrow": "Caso principal",
+      "tech": "Next.js · NestJS · PostgreSQL · JWT · Mercado Libre",
+      "proof": "Plataforma logística en producción con flujos de administración, clientes, móvil y backend.",
+      "cta": "Plataforma en vivo",
+      "chips": ["Auth", "Roles", "Portal cliente", "Etiquetas", "Flujo móvil", "Integración ML"],
+      "images": [
+        {
+          "label": "Portal cliente",
+          "alt": "Plataforma logística AMXpress orientada a clientes"
+        },
+        {
+          "label": "Panel operativo",
+          "alt": "Panel operativo de AMXpress con gestión de envíos"
+        },
+        {
+          "label": "Flujo móvil",
+          "alt": "Concepto de flujo móvil de entregas para AMXpress"
+        }
+      ],
+      "detail": {
+        "eyebrow": "Caso de estudio AMXpress",
+        "title": "Plataforma logística en producción",
+        "overview": "AMXpress es una plataforma logística en producción usada para flujos operativos reales.",
+        "sections": [
+          {
+            "title": "Qué construí",
+            "items": [
+              "APIs backend con NestJS",
+              "Estructura de base de datos en PostgreSQL",
+              "Autenticación con JWT",
+              "Acceso basado en roles",
+              "Portal de clientes",
+              "Flujos de administración y operaciones",
+              "Generación de etiquetas",
+              "Integración con Mercado Libre",
+              "Flujo móvil / app para repartidores"
+            ]
+          },
+          {
+            "title": "Arquitectura técnica",
+            "items": [
+              "Frontend: Next.js / Angular según el módulo",
+              "Backend: NestJS",
+              "Base de datos: PostgreSQL",
+              "Auth: JWT + roles",
+              "Integraciones: API de Mercado Libre",
+              "Deploy: servidor propio / entorno de producción"
+            ]
+          },
+          {
+            "title": "Funcionalidades core",
+            "items": [
+              "Gestión de envíos",
+              "Acceso de clientes",
+              "Manejo de etiquetas",
+              "Seguimiento de estados de entrega",
+              "Flujo móvil para repartidores",
+              "Operaciones administrativas"
+            ]
+          }
+        ]
+      }
+    },
+    "trackly": {
+      "name": "Trackly",
+      "eyebrow": "Prueba secundaria",
+      "tech": "Código abierto · App de escritorio · Release en GitHub",
+      "proof": "Herramienta open-source instalable publicada de forma independiente en GitHub.",
+      "cta": "Release en GitHub",
+      "chips": ["Código abierto", "App de escritorio", "Release"],
+      "images": [
+        {
+          "label": "Release desktop",
+          "alt": "Aplicación desktop open-source Trackly"
+        }
+      ]
+    }
+  },
+  "stack": {
+    "title": "Stack técnico",
+    "description": "Frontend, backend y bases de datos.",
+    "items": ["Angular", "Next.js", "React", "Node.js", "NestJS", "TypeScript", "PostgreSQL", "PHP"]
+  },
+  "backend": {
+    "title": "Backend AMXpress",
+    "description": "Auth, roles, modelos de datos, etiquetas e integraciones.",
+    "items": ["APIs NestJS", "Auth JWT", "Roles y permisos", "PostgreSQL", "Flujo Mercado Libre"]
+  },
+  "openSource": {
+    "title": "Trackly",
+    "description": "Herramienta de escritorio open-source.",
+    "version": "v1.0.0",
+    "chip": "Código abierto",
+    "cta": "Ver release"
+  },
+  "workFocus": {
+    "title": "Foco de producto",
+    "description": "Software práctico alrededor de usuarios, datos y operaciones.",
+    "items": ["Sistemas reales", "Flujos logísticos", "Portales cliente", "Dashboards ops", "APIs backend", "Flujos móviles", "UX por rol", "Datos visibles", "Automatización"]
+  },
+  "contact": {
+    "title": "Contacto directo",
+    "description": "Abierto a oportunidades freelance y de tiempo completo.",
+    "copy": "Copiar",
+    "copied": "Copiado"
+  },
+  "settings": {
+    "title": "Ajustes",
+    "description": "Tema e idioma.",
+    "dark": "Oscuro",
+    "light": "Claro",
+    "english": "EN",
+    "spanish": "ES",
+    "switchToEnglish": "Cambiar idioma a inglés",
+    "switchToSpanish": "Cambiar idioma a español"
   }
 }

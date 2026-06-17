@@ -1,19 +1,37 @@
 "use client";
 
 import Link from "next/link";
+import { useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 import BentoCard from "./BentoCard";
 import { Settings } from "lucide-react";
+import { controlClass, ui } from "./uiStyles";
 
 const locales = ["en", "es"];
+
+function subscribeToMount(onStoreChange: () => void) {
+  const timeoutId = window.setTimeout(onStoreChange, 0);
+
+  return () => window.clearTimeout(timeoutId);
+}
 
 export default function SettingsCard() {
   const locale = useLocale();
   const pathname = usePathname();
-  const { setTheme, theme } = useTheme();
-  const activeTheme = theme ?? "dark";
+  const t = useTranslations("settings");
+  const { setTheme, theme, resolvedTheme } = useTheme();
+  const mounted = useSyncExternalStore(
+    subscribeToMount,
+    () => true,
+    () => false
+  );
+  const activeTheme = mounted
+    ? theme === "system"
+      ? resolvedTheme ?? "dark"
+      : theme ?? "dark"
+    : "dark";
 
   function getLocaleHref(nextLocale: string) {
     const parts = pathname.split("/");
@@ -27,21 +45,21 @@ export default function SettingsCard() {
     return parts.join("/") || `/${nextLocale}`;
   }
 
+  function saveLocalePreference(nextLocale: string) {
+    window.localStorage.setItem("locale", nextLocale);
+  }
+
   return (
     <BentoCard>
-      <div className="flex items-start gap-3">
-        <span className="flex size-9 items-center justify-center rounded-lg border border-accent/20 bg-accent/10 text-accent">
+      <div className={ui.cardHeader}>
+        <span className={ui.iconBox}>
           <Settings size={18} />
         </span>
 
         <div>
-          <h3 className="text-lg font-semibold tracking-tight text-zinc-50">
-            Settings
-          </h3>
+          <h3 className={ui.cardTitle}>{t("title")}</h3>
 
-          <p className="mt-1 text-sm leading-relaxed text-zinc-400">
-            Theme and language.
-          </p>
+          <p className={ui.cardDescription}>{t("description")}</p>
         </div>
       </div>
 
@@ -49,38 +67,32 @@ export default function SettingsCard() {
         <button
           type="button"
           onClick={() => setTheme("dark")}
-          className={`rounded-md border px-2 py-1 transition ${
-            activeTheme === "dark"
-              ? "border-accent/50 bg-accent/15 text-blue-100"
-              : "border-white/10 bg-white/[0.04] text-zinc-300 hover:border-accent/60 hover:text-white"
-          }`}
+          className={controlClass(activeTheme === "dark")}
         >
-          Dark
+          {t("dark")}
         </button>
 
         <button
           type="button"
           onClick={() => setTheme("light")}
-          className={`rounded-md border px-2 py-1 transition ${
-            activeTheme === "light"
-              ? "border-accent/50 bg-accent/15 text-blue-100"
-              : "border-white/10 bg-white/[0.04] text-zinc-300 hover:border-accent/60 hover:text-white"
-          }`}
+          className={controlClass(activeTheme === "light")}
         >
-          Light
+          {t("light")}
         </button>
 
         {locales.map((nextLocale) => (
           <Link
             key={nextLocale}
             href={getLocaleHref(nextLocale)}
-            className={`rounded-md border px-2 py-1 uppercase transition ${
-              locale === nextLocale
-                ? "border-accent/50 bg-accent/15 text-blue-100"
-                : "border-white/10 bg-white/[0.04] text-zinc-300 hover:border-accent/60 hover:text-white"
-            }`}
+            onClick={() => saveLocalePreference(nextLocale)}
+            aria-label={
+              nextLocale === "en"
+                ? t("switchToEnglish")
+                : t("switchToSpanish")
+            }
+            className={controlClass(locale === nextLocale)}
           >
-            {nextLocale}
+            {nextLocale === "en" ? t("english") : t("spanish")}
           </Link>
         ))}
       </div>

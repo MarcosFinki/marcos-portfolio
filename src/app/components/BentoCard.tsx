@@ -35,10 +35,12 @@ export default function BentoCard({
       onMouseMove={handleMouseMove}
       {...props}
       className={clsx(
-        "group relative overflow-hidden rounded-2xl border border-white/[0.08]",
-        "bg-[linear-gradient(180deg,rgba(24,24,27,0.94),rgba(13,13,16,0.98))] p-6",
-        "shadow-[0_18px_60px_rgba(0,0,0,0.22)] ring-1 ring-white/[0.02]",
-        "transition-all duration-300 hover:border-accent/60",
+        "group relative overflow-hidden rounded-2xl border p-5",
+        "border-zinc-200/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(248,250,252,0.94))]",
+        "shadow-[0_18px_60px_rgba(15,23,42,0.08)] ring-1 ring-white/70",
+        "transition-all duration-300 hover:border-accent/45",
+        "dark:border-white/[0.08] dark:bg-[linear-gradient(180deg,rgba(24,24,27,0.94),rgba(13,13,16,0.98))]",
+        "dark:shadow-[0_18px_60px_rgba(0,0,0,0.22)] dark:ring-white/[0.02] dark:hover:border-accent/60",
         className
       )}
     >
@@ -49,7 +51,7 @@ export default function BentoCard({
         "
         style={{
           background:
-            "radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(59,130,246,0.15), transparent 40%)",
+            "radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(59,130,246,0.13), transparent 40%)",
         }}
       />
 
