@@ -7,7 +7,7 @@ export default function UmamiAnalytics() {
     <Script
       defer
       src="https://analytics.amxpress.com.ar/script.js"
-      data-website-id="7be70e90-1b7b-441f-97d9-ad502d9a43eb"
+      data-website-id="9a000b33-5aea-4854-9819-639a72e38a48"
       strategy="afterInteractive"
     />
   );
