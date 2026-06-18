@@ -1,14 +1,19 @@
 "use client";
 
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import BentoCard from "./BentoCard";
 import { Download, Github, Linkedin, MapPin, Globe } from "lucide-react";
 import { ui } from "./uiStyles";
 
 export default function HeroCard() {
+  const locale = useLocale();
   const t = useTranslations("hero");
   const common = useTranslations("common");
+  const cvHref =
+    locale === "es"
+      ? "/cv/marcos-finkiel-cv-es.pdf"
+      : "/cv/marcos-finkiel-cv-en.pdf";
 
   return (
     <BentoCard className="md:col-span-1 md:row-span-2">
@@ -30,12 +35,14 @@ export default function HeroCard() {
 
           <div className="relative inline-block">
             <a
-              href="/resume.pdf"
+              href={cvHref}
               target="_blank"
-              aria-label={t("resume")}
-              className={ui.iconButton}
+              rel="noopener noreferrer"
+              aria-label={t("resumeAria")}
+              className={`${ui.secondaryButton} px-2.5 py-2 text-xs`}
             >
-              <Download size={16} />
+              <Download size={14} />
+              {t("resume")}
             </a>
           </div>
         </div>
@@ -75,7 +82,7 @@ export default function HeroCard() {
         </a>
 
         <a
-          href="https://linkedin.com/in/tuusuario"
+          href="https://www.linkedin.com/in/marcos-finkielsztajn"
           target="_blank"
           rel="noopener noreferrer"
           className={ui.secondaryButton}

@@ -199,6 +199,19 @@ export default function ProjectsCard() {
             )}
             {!project.detail && <div className="min-h-10" aria-hidden="true" />}
 
+            {project.demo && (
+              <a
+                href={project.demo.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={project.demo.ariaLabel}
+                className={ui.secondaryButton}
+              >
+                {project.demo.cta}
+                <ArrowUpRight size={13} />
+              </a>
+            )}
+
             <a
               href={project.link}
               target="_blank"

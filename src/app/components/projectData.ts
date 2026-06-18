@@ -16,6 +16,12 @@ export type Project = {
   proof: string;
   link: string;
   cta: string;
+  demo?: {
+    href: string;
+    cta: string;
+    note: string;
+    ariaLabel: string;
+  };
   chips: string[];
   images: ProjectImage[];
   detail?: {
@@ -81,6 +87,12 @@ export function getProjects(t: TranslationResolver): Project[] {
       proof: t("amxpress.proof"),
       link: "https://amxpress.com.ar",
       cta: t("amxpress.cta"),
+      demo: {
+        href: "https://demo.amxpress.com.ar",
+        cta: t("amxpress.demo.cta"),
+        note: t("amxpress.demo.note"),
+        ariaLabel: t("amxpress.demo.ariaLabel"),
+      },
       chips: stringArray(t.raw("amxpress.chips")),
       images: [
         {

@@ -51,6 +51,22 @@ export default function ProjectDetailsModal({
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
               {project.detail.overview}
             </p>
+            {project.demo && (
+              <div className="mt-4 flex max-w-2xl flex-col items-start gap-2">
+                <a
+                  href={project.demo.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={project.demo.ariaLabel}
+                  className={ui.secondaryButton}
+                >
+                  {project.demo.cta}
+                </a>
+                <p className="text-xs leading-relaxed text-zinc-500 dark:text-zinc-500">
+                  {project.demo.note}
+                </p>
+              </div>
+            )}
           </div>
 
           <button
