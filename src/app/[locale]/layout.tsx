@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
 import {ThemeProvider} from 'next-themes';
+import UmamiAnalytics from '../components/UmamiAnalytics';
 import '../../app/globals.css';
 
 export const metadata: Metadata = {
@@ -38,6 +39,7 @@ export default async function LocaleLayout({
             {children}
           </ThemeProvider>
         </NextIntlClientProvider>
+        <UmamiAnalytics />
       </body>
     </html>
   );
