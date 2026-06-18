@@ -9,7 +9,8 @@
     "resume": "CV",
     "resumeAria": "Abrir CV en PDF en una nueva pestaña",
     "name": "Marcos Finkielsztajn",
-    "description": "Construyo sistemas web full-stack para flujos operativos reales.",
+    "avatarAlt": "Retrato de Marcos Finkiel",
+    "description": "Desarrollador full-stack construyendo software logístico real y herramientas internas de operación.",
     "location": "Valencia",
     "languages": "ES / EN"
   },
@@ -36,15 +37,15 @@
       "images": [
         {
           "label": "Portal cliente",
-          "alt": "Plataforma logística AMXpress orientada a clientes"
+          "alt": "Portal de clientes de AMXpress con listado de envíos y filtros"
         },
         {
           "label": "Panel operativo",
-          "alt": "Panel operativo de AMXpress con gestión de envíos"
+          "alt": "Panel operativo de AMXpress con métricas logísticas y gestión de envíos"
         },
         {
           "label": "Flujo móvil",
-          "alt": "Concepto de flujo móvil de entregas para AMXpress"
+          "alt": "Pantalla de flujo móvil de entregas para AMXpress"
         }
       ],
       "detail": {
@@ -101,7 +102,7 @@
       "images": [
         {
           "label": "Release desktop",
-          "alt": "Aplicación desktop open-source Trackly"
+          "alt": "Interfaz de dashboard de Trackly para release de escritorio"
         }
       ]
     }

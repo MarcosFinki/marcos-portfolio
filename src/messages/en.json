@@ -9,7 +9,8 @@
     "resume": "CV",
     "resumeAria": "Open CV PDF in a new tab",
     "name": "Marcos Finkielsztajn",
-    "description": "I build full-stack web systems for real operational workflows.",
+    "avatarAlt": "Portrait of Marcos Finkiel",
+    "description": "Full-stack developer building real logistics software and internal operations tools.",
     "location": "Valencia",
     "languages": "ES / EN"
   },
@@ -36,15 +37,15 @@
       "images": [
         {
           "label": "Customer portal",
-          "alt": "AMXpress customer-facing logistics platform"
+          "alt": "AMXpress customer portal showing shipment list and filters"
         },
         {
           "label": "Operations dashboard",
-          "alt": "AMXpress operations dashboard with shipment management"
+          "alt": "AMXpress operations dashboard with logistics metrics and shipment management"
         },
         {
           "label": "Mobile delivery flow",
-          "alt": "AMXpress mobile delivery workflow concept"
+          "alt": "AMXpress mobile delivery workflow screen"
         }
       ],
       "detail": {
@@ -101,7 +102,7 @@
       "images": [
         {
           "label": "Desktop release",
-          "alt": "Trackly open-source desktop app"
+          "alt": "Trackly dashboard interface for desktop release"
         }
       ]
     }

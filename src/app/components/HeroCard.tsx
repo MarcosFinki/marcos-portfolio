@@ -20,7 +20,7 @@ export default function HeroCard() {
       <div className="grid grid-cols-[96px_1fr] gap-x-4 gap-y-3">
         <Image
           src="/me.webp"
-          alt="Marcos Finkielsztajn"
+          alt={t("avatarAlt")}
           width={96}
           height={96}
           priority
@@ -47,9 +47,9 @@ export default function HeroCard() {
           </div>
         </div>
 
-        <h2 className="text-xl font-semibold leading-tight tracking-tight text-zinc-950 dark:text-zinc-50">
+        <h1 className="text-xl font-semibold leading-tight tracking-tight text-zinc-950 dark:text-zinc-50">
           {t("name")}
-        </h2>
+        </h1>
 
         <p className="col-span-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
           {t("description")}

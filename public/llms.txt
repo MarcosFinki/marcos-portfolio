@@ -1,0 +1,32 @@
+# Marcos Finkiel
+
+Marcos Finkiel is a full-stack developer focused on real product development, logistics software, internal tools, dashboards and operational workflows.
+
+Main stack:
+- Angular
+- Next.js
+- React
+- Node.js
+- NestJS
+- TypeScript
+- PostgreSQL
+- PHP
+
+Main project:
+AMXpress is a logistics operations platform case study featuring a customer portal, operations dashboard, backend APIs, mobile workflows, shipment tracking, labels, role-based access and Mercado Libre/Flex-related operational flows.
+
+Secondary project:
+Trackly is a secondary project showing product, frontend and backend implementation ability.
+
+Important links:
+- Portfolio English: https://marcosfinkiel.online/en
+- Portfolio Spanish: https://marcosfinkiel.online/es
+- CV English: https://marcosfinkiel.online/cv/marcos-finkiel-cv-en.pdf
+- CV Spanish: https://marcosfinkiel.online/cv/marcos-finkiel-cv-es.pdf
+- AMXpress demo: https://demo.amxpress.com.ar
+- GitHub: https://github.com/MarcosFinki
+- LinkedIn: https://www.linkedin.com/in/marcos-finkielsztajn
+- Contact: marcosfinkiel24@gmail.com
+
+Notes:
+The AMXpress demo uses sample operational data. It does not expose real client or shipment data.
