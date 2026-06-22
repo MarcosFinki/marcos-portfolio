@@ -105,7 +105,7 @@ function structuredData(locale: string) {
         '@id': `${siteUrl}/#person`,
         name: 'Marcos Finkiel',
         url: siteUrl,
-        image: `${siteUrl}/me.webp`,
+        image: `${siteUrl}/me-v2.webp`,
         jobTitle: data.jobTitle,
         knowsAbout: [
           'Angular',

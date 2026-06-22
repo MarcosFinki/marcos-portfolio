@@ -96,17 +96,17 @@ export function getProjects(t: TranslationResolver): Project[] {
       chips: stringArray(t.raw("amxpress.chips")),
       images: [
         {
-          src: "/projects/amxpress-customer-portal.webp",
+          src: "/projects/amxpress-customer-portal-v2.webp",
           label: amxpressImages[0]?.label ?? "",
           alt: amxpressImages[0]?.alt ?? "",
         },
         {
-          src: "/projects/amxpress-operation-dashboard.webp",
+          src: "/projects/amxpress-operation-dashboard-v2.webp",
           label: amxpressImages[1]?.label ?? "",
           alt: amxpressImages[1]?.alt ?? "",
         },
         {
-          src: "/projects/amxpress-mobile-app.webp",
+          src: "/projects/amxpress-mobile-app-v2.webp",
           label: amxpressImages[2]?.label ?? "",
           alt: amxpressImages[2]?.alt ?? "",
         },
@@ -128,7 +128,7 @@ export function getProjects(t: TranslationResolver): Project[] {
       chips: stringArray(t.raw("trackly.chips")),
       images: [
         {
-          src: "/projects/trackly-dashboard.webp",
+          src: "/projects/trackly-dashboard-v2.webp",
           label: tracklyImages[0]?.label ?? "",
           alt: tracklyImages[0]?.alt ?? "",
         },

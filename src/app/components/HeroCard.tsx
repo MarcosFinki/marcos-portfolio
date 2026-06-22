@@ -19,7 +19,7 @@ export default function HeroCard() {
     <BentoCard className="md:col-span-1 md:row-span-2">
       <div className="grid grid-cols-[96px_1fr] gap-x-4 gap-y-3">
         <Image
-          src="/me.webp"
+          src="/me-v2.webp"
           alt={t("avatarAlt")}
           width={96}
           height={96}
